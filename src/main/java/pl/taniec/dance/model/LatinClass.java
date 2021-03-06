@@ -14,8 +14,7 @@ public class LatinClass {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String LatinClass;
+    private String laClass;
 
-//    @OneToOne
-//    private AnnouncementsFindPartner announcementsFindPartner;
+
 }

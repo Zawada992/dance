@@ -1,7 +1,12 @@
 package pl.taniec.dance.model;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 
+@Data
+@NoArgsConstructor
 @Entity
 @Table(name = "advertisementsSales")
 public class AdvertisementsSales {
@@ -10,24 +15,22 @@ public class AdvertisementsSales {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String title;
-//    private String condition;
     private String price;
     private String description;
-//    private String foto;
-//
-//    private String email;
-//    private String phoneNumber;
+    private String city;
+
+    private String foto;
+
+    private String email;
+    private String phoneNumber;
 
     @ManyToOne
     private User user;
 
-    @OneToOne
-    private Town town;
-
-    @OneToOne
+    @ManyToOne
     private Country country;
 
+    @ManyToOne
+    private ConditionNewUsed conditionNewUsed;
 
-//    private String country;
-//    private String town;
 }

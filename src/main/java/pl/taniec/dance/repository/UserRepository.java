@@ -6,7 +6,7 @@ import pl.taniec.dance.model.User;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
-    User findByNickName(String nickName);
+    User findByUsername(String username);
 
 
 }

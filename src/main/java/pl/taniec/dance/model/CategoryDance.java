@@ -14,7 +14,7 @@ public class CategoryDance {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String CategoryDance;
+    private String category;
 
 //    @OneToOne
 //    private AnnouncementsFindPartner announcementsFindPartner;

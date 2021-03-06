@@ -16,9 +16,7 @@ public class Country {
     private Long id;
     private String name;
 
-//    @OneToOne
-//    private AnnouncementsFindPartner announcementsFindPartners;
-//
-//    @OneToOne
-//    private AnnouncementsSellers announcementsSellers;
+//    @OneToMany
+//    private List<Town> town;
+
 }

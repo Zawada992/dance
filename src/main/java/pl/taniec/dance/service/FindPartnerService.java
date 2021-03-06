@@ -1,6 +1,6 @@
 package pl.taniec.dance.service;
 
-import org.springframework.stereotype.Service;
+
 import pl.taniec.dance.model.AnnouncementsFindPartner;
 
 import java.util.List;
@@ -12,6 +12,7 @@ public interface FindPartnerService {
     Optional<AnnouncementsFindPartner> findById(Long id);
     List<AnnouncementsFindPartner> getFindPartner();
     void add(AnnouncementsFindPartner findPartner);
-
     void delete(Long id);
+    List<AnnouncementsFindPartner> findFindPartnerByUserId(Long id);
+
 }

@@ -10,6 +10,10 @@ public class LoginController {
 
     @RequestMapping(value = {"/login"}, method = RequestMethod.GET)
     public String login() {
-        return "admin/login";
+        return "login/login";
+    }
+    @RequestMapping(value = {"/login"}, method = RequestMethod.POST)
+    public String logins() {
+        return "action/homeLog";
     }
 }

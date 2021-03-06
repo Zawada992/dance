@@ -38,12 +38,15 @@ public class FindPartnerServiceImpl implements FindPartnerService {
     @Override
     public void add(AnnouncementsFindPartner findPartner) {
         findPartnerRepository.save(findPartner);
-
-
     }
 
     @Override
     public void delete(Long id) {
         findPartnerRepository.deleteById(id);
+    }
+
+    @Override
+    public List<AnnouncementsFindPartner> findFindPartnerByUserId(Long id) {
+        return findPartnerRepository.findAllByUserId(id);
     }
 }

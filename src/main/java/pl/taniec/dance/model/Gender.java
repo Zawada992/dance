@@ -16,6 +16,5 @@ public class Gender {
     private Long id;
     private String gender;
 
-//    @OneToOne
-//    private AnnouncementsFindPartner announcementsFindPartner;
+
 }
