@@ -4,7 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-import pl.taniec.dance.model.User;
+import pl.taniec.dance.model.Users;
 import pl.taniec.dance.service.UserService;
 
 import javax.validation.Valid;
@@ -22,7 +22,7 @@ public class AdminController {
 
     @GetMapping("/all")
     public String showAllUsers(Model model) {
-        List<User> users = userService.getUsers();
+        List<Users> users = userService.getUsers();
         model.addAttribute("user", users);
         return "user/allUser";
     }
@@ -33,7 +33,7 @@ public class AdminController {
         return "user/editUserAdmin";
     }
     @RequestMapping(value = "/edit/{id}", method = RequestMethod.POST)
-    public String saveEditUser (@Valid @ModelAttribute("user") User user, @PathVariable Long id, BindingResult result){
+    public String saveEditUser (@Valid @ModelAttribute("user") Users user, @PathVariable Long id, BindingResult result){
         if(result.hasErrors()){
             return "user/editUserAdmin";
         }
@@ -45,6 +45,5 @@ public class AdminController {
     public String deleteUser(@PathVariable long id){
         userService.delete(id);
         return "redirect:/admin/user/all";
-//        return "home";
     }
 }

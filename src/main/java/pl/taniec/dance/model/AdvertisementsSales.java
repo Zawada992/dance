@@ -25,7 +25,7 @@ public class AdvertisementsSales {
     private String phoneNumber;
 
     @ManyToOne
-    private User user;
+    private Users user;
 
     @ManyToOne
     private Country country;

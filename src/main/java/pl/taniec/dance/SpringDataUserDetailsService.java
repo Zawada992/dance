@@ -6,7 +6,7 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import pl.taniec.dance.model.User;
+import pl.taniec.dance.model.Users;
 import pl.taniec.dance.service.UserService;
 
 import java.util.HashSet;
@@ -23,7 +23,7 @@ public class SpringDataUserDetailsService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String nickName) {
-        User user = userService.findByNickName(nickName);
+        Users user = userService.findByNickName(nickName);
         if (user == null) {
             throw new UsernameNotFoundException(nickName);
         }

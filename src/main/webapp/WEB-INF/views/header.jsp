@@ -170,6 +170,7 @@
                         <a class="nav-link color-header" href="<c:url value="/findPartner/showAll"/>">
                             <spring:message code="app.findPartner"/></a>
                     </li>
+                    <sec:authorize access="!isAuthenticated()">
                     <li class="nav-item ml-4">
                         <a class="nav-link color-header" href="<c:url value="/login"/>">
                             <spring:message code="app.login"/></a>
@@ -178,7 +179,7 @@
                         <a class="nav-link color-header" href="<c:url value="/user/add"/>">
                             <spring:message code="app.registration"/></a>
                     </li>
-
+                    </sec:authorize>
 
                     <div class="topbar-divider d-none d-sm-block"></div>
 

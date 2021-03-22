@@ -7,7 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import pl.taniec.dance.model.AdvertisementsSales;
-import pl.taniec.dance.model.User;
+import pl.taniec.dance.model.Users;
 import pl.taniec.dance.service.AdvertSelesService;
 import pl.taniec.dance.service.ConditionNewUsedService;
 import pl.taniec.dance.service.CountryService;
@@ -49,7 +49,7 @@ public class AdvertSelesController {
     @GetMapping("/showAllMyAd")
     public String showAdvertSelesAll(Model model) {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        User currentUser = userService.findByNickName(auth.getName());
+        Users currentUser = userService.findByNickName(auth.getName());
         Long id = currentUser.getId();
         List<AdvertisementsSales> advertisementsSales = advertSelesService.findAdvertSelesByUserId(id);
         model.addAttribute("advertSeles", advertisementsSales);
@@ -62,7 +62,6 @@ public class AdvertSelesController {
         model.addAttribute("country", countryService.getCountry());
         model.addAttribute("condition", conditionNewUsedService.getCondition());
 
-
         return "sell/addSell";
     }
 
@@ -73,7 +72,7 @@ public class AdvertSelesController {
         if (result.hasErrors()) {
             return "sell/addSell";
         }
-        User user = userService.findByNickName(authentication.getName());
+        Users user = userService.findByNickName(authentication.getName());
         sell.setUser(user);
         advertSelesService.add(sell);
         return "redirect:/sell/showAll";

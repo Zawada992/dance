@@ -5,7 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-import pl.taniec.dance.model.User;
+import pl.taniec.dance.model.Users;
 import pl.taniec.dance.service.UserService;
 
 import javax.validation.Valid;
@@ -23,7 +23,7 @@ public class UserController {
     @GetMapping("/create-user")
     @ResponseBody
     public String createUser() {
-        User user = new User();
+        Users user = new Users();
         user.setUsername("aaa");
         user.setPassword("123");
         userService.saveUser(user);
@@ -32,12 +32,12 @@ public class UserController {
 
     @RequestMapping("/add")
     public  String addUser(Model model){
-        model.addAttribute("user", new User());
+        model.addAttribute("user", new Users());
         return "user/addUser";
     }
 
     @RequestMapping(value = "/add", method = RequestMethod.POST)
-    public String saveAddUser(@Valid User user, BindingResult result) {
+    public String saveAddUser(@Valid Users user, BindingResult result) {
         if (result.hasErrors()) {
             return "user/addUser";
         }
@@ -47,14 +47,14 @@ public class UserController {
     }
     @RequestMapping(value = "/edit")
     public String editUser (Model model, Authentication auth){
-        User currentUser = userService.findByNickName(auth.getName());
+        Users currentUser = userService.findByNickName(auth.getName());
         Long id = currentUser.getId();
         model.addAttribute("user", userService.get(id));
         return "user/editUser";
     }
 
     @RequestMapping(value = "/update", method = RequestMethod.POST)
-    public String saveEditUser (@Valid @ModelAttribute ("user") User user, BindingResult result){
+    public String saveEditUser (@Valid @ModelAttribute ("user") Users user, BindingResult result){
         if(result.hasErrors()){
             return "user/editUser";
         }

@@ -7,7 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import pl.taniec.dance.model.AnnouncementsFindPartner;
-import pl.taniec.dance.model.User;
+import pl.taniec.dance.model.Users;
 import pl.taniec.dance.service.*;
 
 import javax.validation.Valid;
@@ -54,7 +54,7 @@ public class FindPartnerController {
     @GetMapping("/showAllMyAd")
     public String showAnnFindPartnerAll(Model model) {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        User currentUser = userService.findByNickName(auth.getName());
+        Users currentUser = userService.findByNickName(auth.getName());
         Long id = currentUser.getId();
         List<AnnouncementsFindPartner> findPartnerList = findPartnerService.findFindPartnerByUserId(id);
         model.addAttribute("findPartner", findPartnerList);
@@ -81,7 +81,7 @@ public class FindPartnerController {
         if (result.hasErrors()) {
             return "findPartner/findPartner";
         }
-        User user = userService.findByNickName(authentication.getName());
+        Users user = userService.findByNickName(authentication.getName());
         findPartner.setUser(user);
         findPartnerService.add(findPartner);
         return "redirect:/findPartner/showAll";

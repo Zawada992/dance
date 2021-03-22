@@ -27,7 +27,7 @@ public class AnnouncementsFindPartner {
 
 
     @ManyToOne
-    private User user;
+    private Users user;
 
     @ManyToOne
     private Country country;
