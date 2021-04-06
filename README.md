@@ -10,7 +10,7 @@ The aim of the project is to create a place where dancers can post ads for the s
   - Spring Security
 ## Database:
   - MySQL
-  - PostgreSQL in heroku
+  
 
 ## There are two ways to start a project:
   1. Import the project as a Maven project, following the instructions below:
