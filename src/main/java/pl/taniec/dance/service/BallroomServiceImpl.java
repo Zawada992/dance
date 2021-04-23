@@ -1,19 +1,17 @@
 package pl.taniec.dance.service;
 
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import pl.taniec.dance.model.BallroomClass;
 import pl.taniec.dance.repository.BallroomRepository;
 
 import java.util.List;
 
+@AllArgsConstructor
 @Service
 public class BallroomServiceImpl implements BallroomService{
 
     private final BallroomRepository ballroomRepository;
-
-    public BallroomServiceImpl(BallroomRepository ballroomRepository) {
-        this.ballroomRepository = ballroomRepository;
-    }
 
 
     @Override

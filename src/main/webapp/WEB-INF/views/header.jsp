@@ -27,6 +27,8 @@
 
     <!-- Custom styles for this template-->
     <link href="<c:url value="/css/sb-admin-2.min.css"/>" rel="stylesheet">
+    <!-- Custom styles for this page -->
+    <link href="<c:url value="/vendor/datatables/dataTables.bootstrap4.min.css"/>" rel="stylesheet">
 
 </head>
 
@@ -67,10 +69,6 @@
 
         <hr class="sidebar-divider">
 
-        <!-- Heading -->
-            <%--        <div class="sidebar-heading">--%>
-            <%--            Interface--%>
-            <%--        </div>--%>
 
 
 
@@ -86,7 +84,7 @@
                  data-parent="#accordionSidebar">
                 <div class="bg-gray-900 py-2 collapse-inner rounded">
                         <%--                    <h6 class="collapse-header">Operacje:</h6>--%>
-                    <a class="collapse-item text-gray-100" href="<c:url value="app/findPartner/showAllMyAd"/>">Lista</a>
+                    <a class="collapse-item text-gray-100" href="<c:url value="/app/findPartner/showAllMyAd"/>">Lista</a>
                     <a class="collapse-item text-gray-100" href="<c:url value="/app/findPartner/add"/>">Dodaj</a>
 
                 </div>
@@ -125,7 +123,6 @@
                 <div id="collapseUsers" class="collapse" aria-labelledby="headingUtilities"
                      data-parent="#accordionSidebar">
                     <div class="bg-gray-900 py-2 collapse-inner rounded">
-                            <%--                    <h6 class="collapse-header">Operacje:</h6>--%>
                         <a class="collapse-item text-gray-100" href="<c:url value="/admin/user/all"/>">Lista</a>
 
                     </div>
@@ -163,7 +160,7 @@
 
 
                     <li class="nav-item ml-4">
-                        <a class="nav-link color-header" href="<c:url value="sell/showAll"/>">
+                        <a class="nav-link color-header" href="<c:url value="/sell/showAll"/>">
                             <spring:message code="app.sell"/></a>
                     </li>
                     <li class="nav-item ml-4">
@@ -202,29 +199,9 @@
 
                         <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                              aria-labelledby="userDropdown">
-                            <a class="dropdown-item" href="<c:url value="/login"/>">
-                                <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                Logowanie
-                            </a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="<c:url value="/user/edit"/>">
+                            <a class="dropdown-item" href="<c:url value="/app/user/edit"/>">
                                 <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                 Account
-                            </a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="<c:url value="/findPartner/add"/>">
-                                <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                Dodaj Ogłoszenie
-                            </a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="<c:url value="/sell/add"/>">
-                                <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                Dodaj Ogłoszenie
-                            </a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">
-                                <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                                Activity Log
                             </a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">

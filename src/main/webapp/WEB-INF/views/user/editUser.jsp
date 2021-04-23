@@ -1,11 +1,4 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<%--
-  Created by IntelliJ IDEA.
-  User: robert
-  Date: 04.03.2021
-  Time: 19:01
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -37,26 +30,12 @@
 <div class="container mt-4">
     <!-- Account page navigation-->
     <nav class="nav nav-borders">
-        <a class="nav-link active ml-0" href="<c:url value="/user/edit"/>">Profile</a>
+        <a class="nav-link active ml-0" href="<c:url value="/app/user/edit"/>">Profile</a>
 
-        <a class="nav-link" href="<c:url value="/user/security"/>">Security</a>
+        <a class="nav-link" href="<c:url value="/app/user/security"/>">Security</a>
     </nav>
     <hr class="mt-0 mb-4">
     <div class="row">
-        <%--        <div class="col-xl-4">--%>
-        <%--            <!-- Profile picture card-->--%>
-        <%--            <div class="card">--%>
-        <%--                <div class="card-header">Profile Picture</div>--%>
-        <%--                <div class="card-body text-center">--%>
-        <%--                    <!-- Profile picture image-->--%>
-        <%--                    <img class="img-account-profile rounded-circle mb-2" src="assets/img/illustrations/profiles/profile-1.png" alt="">--%>
-        <%--                    <!-- Profile picture help block-->--%>
-        <%--                    <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>--%>
-        <%--                    <!-- Profile picture upload button-->--%>
-        <%--                    <button class="btn btn-primary" type="button">Upload new image</button>--%>
-        <%--                </div>--%>
-        <%--            </div>--%>
-        <%--        </div>--%>
         <div class="col-xl-8">
             <!-- Account details card-->
             <div class="card mb-4">
@@ -65,8 +44,8 @@
                     <form:form method="post" modelAttribute="user" action="/app/user/update">
                         <!-- Form Group (username)-->
                         <form:hidden path="id"/>
-                        <form:hidden path="password"></form:hidden>
-                        <form:hidden path="roles"></form:hidden>
+                        <form:hidden path="password"/>
+                        <form:hidden path="roles"/>
                         <div class="form-group">
                             <td><spring:message code="app.userName"/></td>
                             <form:input path="username" class="form-control"/>
@@ -88,47 +67,6 @@
     </div>
 </div>
 
-
-
-
-
-
-
-
-<%--<section class="dashboard-section">--%>
-<%--    <div class="container pt-4 pb-4">--%>
-<%--        <div class="border-dashed view-height">--%>
-<%--            <div class="container w-25">--%>
-<%--                <form:form method="post" modelAttribute="user">--%>
-<%--                    <form:hidden path="id"/>--%>
-<%--                    <form:hidden path="password"></form:hidden>--%>
-<%--                    <form:hidden path="roles"></form:hidden>--%>
-<%--                    <div>--%>
-<%--                        <td><spring:message code="app.edit"/>:</td>--%>
-<%--                        <div>--%>
-<%--                            <td><spring:message code="app.userName"/>:</td>--%>
-<%--                            <form:input path="username"/>--%>
-<%--                            <form:errors path="username"/>--%>
-<%--                        </div>--%>
-<%--                        <div>--%>
-<%--                            <td><spring:message code="app.email"/>:</td>--%>
-<%--                            <form:input path="email"/>--%>
-<%--                            <form:errors path="email"/>--%>
-<%--                        </div>--%>
-<%--&lt;%&ndash;                        <div>&ndash;%&gt;--%>
-<%--&lt;%&ndash;                            <td><spring:message code="app.password"/>:</td>&ndash;%&gt;--%>
-<%--&lt;%&ndash;                            <form:input path="password"/>&ndash;%&gt;--%>
-<%--&lt;%&ndash;                            <form:errors path="password"/>&ndash;%&gt;--%>
-<%--&lt;%&ndash;                        </div>&ndash;%&gt;--%>
-<%--                    </div>--%>
-<%--                    <input type="submit" name="<spring:message code="app.edit"/>">--%>
-
-<%--                </form:form>--%>
-
-<%--            </div>--%>
-<%--        </div>--%>
-<%--    </div>--%>
-<%--</section>--%>
 <%@include file="../footer.jsp"%>
 </body>
 </html>

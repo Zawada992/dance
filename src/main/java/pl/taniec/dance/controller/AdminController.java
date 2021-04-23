@@ -1,5 +1,6 @@
 package pl.taniec.dance.controller;
 
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -10,15 +11,13 @@ import pl.taniec.dance.service.UserService;
 import javax.validation.Valid;
 import java.util.List;
 
+@AllArgsConstructor
 @Controller
 @RequestMapping("/admin/user")
 public class AdminController {
 
     private final UserService userService;
 
-    public AdminController(UserService userService) {
-        this.userService = userService;
-    }
 
     @GetMapping("/all")
     public String showAllUsers(Model model) {

@@ -1,5 +1,6 @@
 package pl.taniec.dance.controller;
 
+import lombok.AllArgsConstructor;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
@@ -13,6 +14,7 @@ import pl.taniec.dance.service.*;
 import javax.validation.Valid;
 import java.util.List;
 
+@AllArgsConstructor
 @Controller
 @RequestMapping("/app/findPartner")
 public class FindPartnerController {
@@ -25,31 +27,6 @@ public class FindPartnerController {
     private final CategoryDanceService categoryDanceService;
     private final UserService userService;
 
-
-    public FindPartnerController(FindPartnerService findPartnerService, LatinService latinService, BallroomService ballroomService, GenderService genderService, CountryService countryService, CategoryDanceService categoryDanceService, UserService userService) {
-        this.findPartnerService = findPartnerService;
-        this.latinService = latinService;
-        this.ballroomService = ballroomService;
-        this.genderService = genderService;
-        this.countryService = countryService;
-        this.categoryDanceService = categoryDanceService;
-        this.userService = userService;
-    }
-
-
-//    @GetMapping("/showAll")
-//    public String showAnnFindPartnerAll(Model model){
-//        List<AnnouncementsFindPartner> findPartnerList = findPartnerService.getFindPartner();
-//        model.addAttribute("findPartner", findPartnerList);
-//        return "findPartner/showFindPartnerAll";
-//    }
-//
-//    @GetMapping("/show/{id}")
-//    public String showAnnFindPartner(@PathVariable ("id") Long id, Model model){
-//       AnnouncementsFindPartner findPartner = findPartnerService.findById(id).get();
-//        model.addAttribute("findPartner", findPartner);
-//        return "findPartner/detailsFindPartner";
-//    }
 
     @GetMapping("/showAllMyAd")
     public String showAnnFindPartnerAll(Model model) {
@@ -90,7 +67,7 @@ public class FindPartnerController {
     @RequestMapping("/delete")
     public String deleteUser(@PathVariable long id) {
         findPartnerService.delete(id);
-        return "redirect:/app/findPartner/";
+        return "redirect:/app/findPartner/showAllMyAd";
     }
 
 }

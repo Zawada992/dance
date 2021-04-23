@@ -6,7 +6,7 @@ import pl.taniec.dance.model.AdvertisementsSales;
 
 import java.util.List;
 
-@Repository
+
 public interface AdvertSelesRepository extends JpaRepository <AdvertisementsSales, Long> {
     AdvertisementsSales findByTitle(String title);
     List<AdvertisementsSales> findAllByUserId(Long id);

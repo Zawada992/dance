@@ -41,11 +41,6 @@
                                                  itemLabel="category" itemValue="id"/>
 
                                 </div>
-                                    <%--                            <div class="col-sm-6 mb-3 mb-sm-0">--%>
-                                    <%--                                <td><spring:message code="app.age"/>:</td>--%>
-                                    <%--                                <form:input path="age" placeholder="wiek"/>--%>
-                                    <%--                                <form:errors path="age"/>--%>
-                                    <%--                            </div>--%>
                             </div>
                             <div class="row">
                                 <div class="col-sm-6 mb-3 mb-sm-0">
@@ -60,11 +55,6 @@
                                                  itemValue="id" itemLabel="ballroomClass"/>
 
                                 </div>
-                                    <%--                            <div class="col-sm-6 mb-3 mb-sm-0">--%>
-                                    <%--                                <td><spring:message code="app.height"/>:</td>--%>
-                                    <%--                                <form:input path="height" placeholder="cm"/>--%>
-                                    <%--                                <form:errors path="height"/>--%>
-                                    <%--                            </div>--%>
                             </div>
                             <div class="row">
                                 <div class="col-sm-6 mb-3 mb-sm-0">
@@ -79,9 +69,6 @@
                                                  itemLabel="laClass" itemValue="id"/>
 
                                 </div>
-                                    <%--                            <div class="">--%>
-
-                                    <%--                            </div>--%>
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-6 mb-3 mb-sm-0">
@@ -117,9 +104,7 @@
                                                 class="form-control form-control-user"/>
                                     <form:errors path="phoneNumber"/>
                                 </div>
-
                             </div>
-
 
                             <button type="submit" class="btn btn-primary btn-user btn-block">
                                 <spring:message code="app.add"/></button>

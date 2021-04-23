@@ -12,6 +12,7 @@ public interface UserService {
     void delete(Long id);
     Users get(Long id);
     List<Users> getUsers();
+    void saveUserPassword(Users user);
 
 
 }

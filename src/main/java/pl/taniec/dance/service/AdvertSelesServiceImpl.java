@@ -1,5 +1,6 @@
 package pl.taniec.dance.service;
 
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import pl.taniec.dance.model.AdvertisementsSales;
 import pl.taniec.dance.repository.AdvertSelesRepository;
@@ -7,14 +8,12 @@ import pl.taniec.dance.repository.AdvertSelesRepository;
 import java.util.List;
 import java.util.Optional;
 
+@AllArgsConstructor
 @Service
 public class AdvertSelesServiceImpl implements AdvertSelesService{
 
     private final AdvertSelesRepository advertSelesRepository;
 
-    public AdvertSelesServiceImpl(AdvertSelesRepository advertSelesRepository) {
-        this.advertSelesRepository = advertSelesRepository;
-    }
 
     @Override
     public AdvertisementsSales findByTitle(String title) {

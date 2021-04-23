@@ -1,5 +1,6 @@
 package pl.taniec.dance.controller;
 
+import lombok.AllArgsConstructor;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
@@ -16,6 +17,7 @@ import pl.taniec.dance.service.UserService;
 import javax.validation.Valid;
 import java.util.List;
 
+@AllArgsConstructor
 @Controller
 @RequestMapping("/app/sell")
 public class AdvertSelesController {
@@ -25,26 +27,6 @@ public class AdvertSelesController {
     private final ConditionNewUsedService conditionNewUsedService;
     private final UserService userService;
 
-    public AdvertSelesController(AdvertSelesService advertSelesService, CountryService countryService, ConditionNewUsedService conditionNewUsedService, UserService userService) {
-        this.advertSelesService = advertSelesService;
-        this.countryService = countryService;
-        this.conditionNewUsedService = conditionNewUsedService;
-        this.userService = userService;
-    }
-
-//    @GetMapping("/showAll")
-//    public String showAdvertSelesAll(Model model){
-//        List<AdvertisementsSales> advertisementsSales = advertSelesService.getAdvertSeles();
-//        model.addAttribute("advertSeles", advertisementsSales);
-//        return "sell/showAdvSellAll";
-//    }
-//    @GetMapping("/show/{id}")
-//    public String showAnnFindPartner(@PathVariable("id") Long id, Model model){
-//        AdvertisementsSales sales = advertSelesService.findById(id).get();
-//        model.addAttribute("advertSeles", sales);
-//        return "sell/detailsSells";
-//
-//    }
 
     @GetMapping("/showAllMyAd")
     public String showAdvertSelesAll(Model model) {
@@ -81,7 +63,7 @@ public class AdvertSelesController {
     @RequestMapping("/delete")
     public String deleteSell(@PathVariable Long id) {
         advertSelesService.delete(id);
-        return "redirect:/app/sell/";
+        return "redirect:/app/sell/showAllMyAd";
 
     }
 

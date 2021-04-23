@@ -1,11 +1,4 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<%--
-  Created by IntelliJ IDEA.
-  User: robert
-  Date: 05.03.2021
-  Time: 15:37
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -19,11 +12,11 @@
 
             <div class="card mb-4">
                 <div class="card-body">
-                    <form:form method="post" modelAttribute="user" action="/app/user/update">
+                    <form:form method="post" modelAttribute="user">
 
                         <form:hidden path="id"/>
-                        <form:hidden path="password"></form:hidden>
-                        <form:hidden path="roles"></form:hidden>
+                        <form:hidden path="password"/>
+                        <form:hidden path="roles"/>
                         <div class="form-group">
                             <td><spring:message code="app.userName"/></td>
                             <form:input path="username" class="form-control"/>
