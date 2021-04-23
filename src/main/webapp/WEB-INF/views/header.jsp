@@ -1,8 +1,3 @@
-<%@ page import="org.springframework.security.core.context.SecurityContextHolder" %>
-<%@ page import="org.springframework.web.context.support.WebApplicationContextUtils" %>
-<%@ page import="org.springframework.web.context.WebApplicationContext" %>
-<%--<%@ page import="pl.gastromanager.service.UserService" %>--%>
-<%--<%@ page import="pl.gastromanager.model.Users" %>--%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
@@ -33,14 +28,6 @@
 </head>
 
 <body id="page-top">
-
-<%--    <%--%>
-<%--                String name = SecurityContextHolder.getContext().getAuthentication().getName();--%>
-<%--                WebApplicationContext context = WebApplicationContextUtils.getWebApplicationContext(application);--%>
-<%--                UserService userService = context.getBean(UserService.class);--%>
-<%--                Users currentUser = userService.findByUserEmail(name);--%>
-<%--                pageContext.setAttribute("currentUser", currentUser);--%>
-<%--    %>--%>
 
 <div id="wrapper">
 
@@ -83,10 +70,8 @@
             <div id="collapseSzukamPartnera" class="collapse" aria-labelledby="headingTwo"
                  data-parent="#accordionSidebar">
                 <div class="bg-gray-900 py-2 collapse-inner rounded">
-                        <%--                    <h6 class="collapse-header">Operacje:</h6>--%>
                     <a class="collapse-item text-gray-100" href="<c:url value="/app/findPartner/showAllMyAd"/>">Lista</a>
                     <a class="collapse-item text-gray-100" href="<c:url value="/app/findPartner/add"/>">Dodaj</a>
-
                 </div>
             </div>
         </li>
@@ -100,12 +85,8 @@
             </a>
             <div id="collapseSprzedaz" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                 <div class="bg-gray-900 py-2 collapse-inner rounded">
-                        <%--                    <h6 class="collapse-header">Operacje:</h6>--%>
                     <a class="collapse-item text-gray-100" href="<c:url value="/app/sell/showAllMyAd"/>">Lista</a>
-
                     <a class="collapse-item text-gray-100" href="<c:url value="/app/sell/add"/>">Dodaj</a>
-
-
                 </div>
             </div>
         </li>
@@ -124,7 +105,6 @@
                      data-parent="#accordionSidebar">
                     <div class="bg-gray-900 py-2 collapse-inner rounded">
                         <a class="collapse-item text-gray-100" href="<c:url value="/admin/user/all"/>">Lista</a>
-
                     </div>
                 </div>
             </li>
@@ -188,8 +168,6 @@
 
                                 <span class="mr-2 d-none d-lg-inline text-gray-200" style="margin-top: 15px">
                                     <p><sec:authentication property="principal.username"/></p>
-<%--                                <p>${currentUser.firstName} ${currentUser.lastName}</p>--%>
-<%--                                <p> <sec:authentication property="authorities"/></p>--%>
                                 </span>
 
                             <img class="img-profile rounded-circle"

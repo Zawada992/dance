@@ -10,6 +10,8 @@
 <spring:message code="app.login.rememberMe" var="rememberMe"/>
 <spring:message code="app.login.createAccount" var="createAccount"/>
 <spring:message code="app.login" var="login"/>
+<spring:message code="app.backToHome" var="backToHome"/>
+
 
 <html>
 <head>
@@ -86,6 +88,9 @@
                                 <%--                                </div>--%>
                                 <div class="text-center">
                                     <a class="small" href="<c:url value="/user/add"/>">${createAccount}</a>
+                                </div>
+                                <div class="text-center">
+                                    <a class="small" href="<c:url value="/"/>">${backToHome}</a>
                                 </div>
                             </div>
                         </div>
